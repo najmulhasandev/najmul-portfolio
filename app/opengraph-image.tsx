@@ -9,6 +9,8 @@ export const contentType = "image/png";
 
 export default async function Image() {
   const font = await readFile(path.join(process.cwd(), "assets/space-grotesk-700.woff"));
+  const logo = await readFile(path.join(process.cwd(), "public/logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
   return new ImageResponse(
     (
       <div
@@ -27,21 +29,8 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 30, fontWeight: 700 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: 64,
-              height: 64,
-              borderRadius: 18,
-              background: "linear-gradient(115deg,#2ee6c5,#8e7cff)",
-              color: "#05100d",
-              fontSize: 28,
-            }}
-          >
-            NH
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={logoSrc} width={64} height={64} alt="" style={{ borderRadius: 18 }} />
           {SITE_NAME}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
