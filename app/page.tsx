@@ -31,7 +31,6 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="wrap hero-grid">
           <div>
-            <span className="pill rise"><span className="dot" aria-hidden="true" /> Available for freelance and part-time work</span>
             <h1 className="h1 rise" style={{ ["--d" as string]: "0.08s" }}>
               Mobile apps and web products that <span className="grad-text">actually ship.</span>
             </h1>
