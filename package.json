@@ -1,43 +1,33 @@
 {
   "name": "najmul-portfolio",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
+  "description": "Portfolio of Najmul Hasan, a full-stack and React Native developer for freelance and part-time work. Live at hire.najmulhasan.dev.",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "git+https://github.com/najmulhasandev/najmul-portfolio.git" },
+  "homepage": "https://hire.najmulhasan.dev",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check:privacy && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:privacy": "node scripts/check-privacy.mjs",
+    "resume": "python3 scripts/build-resume.py"
   },
   "dependencies": {
-    "framer-motion": "^12.38.0",
-    "next": "16.1.6",
-    "puppeteer": "^24.40.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "next": "^16.4.2",
     "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "react-icons": "^5.5.0"
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
-    "tailwindcss": "^4",
+    "eslint-config-next": "^16.4.2",
     "typescript": "^5"
-  },
-  "description": "<!-- PREMIUM HEADER -->",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/najmulcodes/najmul-portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/najmulcodes/najmul-portfolio/issues"
-  },
-  "homepage": "https://github.com/najmulcodes/najmul-portfolio#readme"
+  }
 }
