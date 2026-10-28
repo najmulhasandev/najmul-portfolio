@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Close, Menu } from "./Icons";
 import { MAILTO } from "@/lib/site";
@@ -23,7 +24,7 @@ export default function Header() {
     <header className="site-header">
       <div className="wrap nav-row">
         <Link href="/" className="brand" aria-label="Najmul Hasan, home" onClick={close}>
-          <span className="brand-mark" aria-hidden="true">NH</span>
+          <Image src="/logo.png" alt="" width={40} height={40} className="brand-logo" aria-hidden="true" priority />
           Najmul Hasan
         </Link>
         <nav className="nav" aria-label="Primary">

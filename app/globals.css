@@ -1411,3 +1411,10 @@ button {
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .marquee-track [aria-hidden="true"] { display: none; }
 }
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: contain;
+}
