@@ -67,6 +67,15 @@
   pointer-events: none;
 }
 
+/* dark halo so the heading stays readable over the screens */
+.copy::before {
+  content: "";
+  position: absolute;
+  inset: -3rem -10% -2.5rem;
+  z-index: -1;
+  background: radial-gradient(60% 70% at 50% 45%, rgba(20, 5, 8, 0.88), transparent 100%);
+}
+
 .eyebrow {
   margin: 0 0 0.75rem;
   font-size: 0.8rem;
@@ -137,6 +146,16 @@
   translate: -50% 14%;
 }
 
+/* the focal screen floats too (animated on an inner wrapper so .focal keeps its position) */
+.focalInner {
+  animation: focalFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes focalFloat {
+  from { translate: 0 -12px; }
+  to   { translate: 0 10px; }
+}
+
 /* ---------- fanned hero phones ---------- */
 .fan {
   position: relative;
@@ -189,12 +208,13 @@
 
 .view {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 2 / 1;
   background: #f4e9eb;
 }
 
 .wall[data-variant="browser"] .col { width: clamp(150px, 24vw, 360px); }
 .wall[data-variant="browser"] .focal { width: clamp(260px, 40vw, 580px); translate: -50% 18%; }
+.wall[data-variant="browser"] .shot { object-position: left top; }
 
 @media (max-width: 700px) {
   .wall[data-variant="browser"] .col { width: 46vw; }
@@ -212,5 +232,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .col,
-  .fanItem { animation: none; }
+  .fanItem,
+  .focalInner { animation: none; }
 }

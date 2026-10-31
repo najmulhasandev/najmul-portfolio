@@ -126,7 +126,9 @@ export function ScreenWall({
         </div>
 
         <div className={styles.focal}>
-          <Tile screen={focal} sizes={focalSizes} />
+          <div className={styles.focalInner}>
+            <Tile screen={focal} sizes={focalSizes} />
+          </div>
         </div>
       </div>
     </section>

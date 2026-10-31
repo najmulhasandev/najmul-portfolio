@@ -177,7 +177,7 @@ export default function Home() {
       {/* SCREEN WALL */}
       <ScreenWall
         eyebrow="Shipped work"
-        title="From idea to the phone in your pocket."
+        title="From first idea to a product people use."
         screens={wallScreens}
         focal={wallFocal}
       />
