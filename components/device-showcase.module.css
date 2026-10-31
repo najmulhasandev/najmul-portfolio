@@ -123,18 +123,22 @@
   flex-direction: column;
   gap: clamp(0.6rem, 1.6vw, 1.5rem);
   width: clamp(112px, 16vw, 250px);
-  animation: drift 9s ease-in-out infinite alternate;
+  animation: drift 8s ease-in-out infinite alternate;
 }
 
 .col:nth-child(even) {
   margin-top: 14%;
   animation-direction: alternate-reverse;
-  animation-duration: 11s;
+  animation-duration: 10s;
 }
 
+/* offset columns 3 and 4 so the wall rolls like a wave instead of moving in lockstep */
+.col:nth-child(3) { animation-delay: -3s; }
+.col:nth-child(4) { animation-delay: -5s; }
+
 @keyframes drift {
-  from { translate: 0 -3%; }
-  to   { translate: 0 3%; }
+  from { translate: 0 -7%; }
+  to   { translate: 0 7%; }
 }
 
 .focal {
@@ -213,18 +217,11 @@
 }
 
 .wall[data-variant="browser"] .col { width: clamp(150px, 24vw, 360px); }
-.wall[data-variant="browser"] .focal {
-  left: auto;
-  right: clamp(0.5rem, 5vw, 6rem);
-  width: clamp(260px, 44vw, 660px);
-  translate: 0 18%;
-}
 .wall[data-variant="browser"] .shot { object-position: left top; }
 
 @media (max-width: 700px) {
   .wall[data-variant="browser"] .col { width: 46vw; }
   .wall[data-variant="browser"] .col:nth-child(n + 3) { display: none; }
-  .wall[data-variant="browser"] .focal { left: 50%; right: auto; width: 74vw; translate: -50% 18%; }
 }
 
 /* ---------- small screens: 3 columns only ---------- */
