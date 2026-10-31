@@ -21,7 +21,6 @@ function Phone({
           alt={screen.alt}
           fill
           sizes={sizes}
-          unoptimized
           className={styles.shot}
           loading={eager ? "eager" : "lazy"}
           fetchPriority={eager ? "high" : "auto"}
