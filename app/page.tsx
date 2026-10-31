@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CopyEmail from "@/components/CopyEmail";
@@ -16,6 +17,8 @@ import {
 } from "@/lib/site";
 
 const ICONS = { phone: Phone, browser: Browser, server: Server, bot: Bot, wrench: Wrench } as const;
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const fmt = (d: string) =>
   new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });

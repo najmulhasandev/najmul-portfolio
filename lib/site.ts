@@ -28,7 +28,8 @@ export const DESCRIPTION =
   "Freelance full-stack and React Native developer in Dhaka. Mobile apps, web apps, backends and Telegram bots built with Next.js, Node.js and Supabase.";
 
 // Bump when the page content really changes (used for sitemap and schema dateModified).
-export const UPDATED = "2026-10-27";
+export const UPDATED = "2026-10-31"; // home page content last changed (bump only on real changes)
+export const PROJECTS_UPDATED = "2026-10-27"; // project pages content last changed
 
 export function abs(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
