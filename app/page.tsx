@@ -9,7 +9,7 @@ import {
 } from "@/lib/content";
 import { PROJECTS, isLive } from "@/lib/projects";
 import { ScreenWall } from "@/components/device-showcase";
-import { wallFocal, wallScreens } from "@/lib/showcase-screens";
+import { wallScreens } from "@/lib/showcase-screens";
 import { homeGraph } from "@/lib/schema";
 import {
   BLOG, CERTIFICATE, EMAIL, GITHUB, LINKEDIN, MAILTO, MAIN_SITE, RESUME_PDF, UPWORK,
@@ -179,7 +179,6 @@ export default function Home() {
         eyebrow="Shipped work"
         title="From first idea to a product people use."
         screens={wallScreens}
-        focal={wallFocal}
       />
 
       {/* REVIEWS */}
