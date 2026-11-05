@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = getProject(slug);
   if (!p) return {};
-  const description = `${p.tagline} Case study by ${SITE_NAME}: ${p.stack.slice(0, 4).join(", ")}.`;
+  const description = p.stack.length > 0
+    ? `${p.tagline} Case study by ${SITE_NAME}: ${p.stack.slice(0, 4).join(", ")}.`
+    : `${p.tagline} Project by ${SITE_NAME}.`;
   const title = `${p.name}: ${p.category} Case Study`;
   return {
     title,
@@ -56,7 +58,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     url: `${SITE_URL}/projects/${p.slug}`,
     image: abs(`/img/projects/${p.image}.webp`),
     ...(p.slug === "petcare-system" ? {} : { author: { "@type": "Person", "@id": `${SITE_URL}/#person`, name: SITE_NAME } }),
-    keywords: p.stack.join(", "),
+    ...(p.stack.length > 0 ? { keywords: p.stack.join(", ") } : {}),
     ...(p.live ? { sameAs: [p.live] } : {}),
   };
 
@@ -114,6 +116,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 ))}
               </ul>
             </section>
+            {p.challenges.length > 0 && (
             <section>
               <h2>Problems and how I solved them</h2>
               <div className="pairs">
@@ -131,9 +134,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 ))}
               </div>
             </section>
+            )}
           </div>
 
           <aside className="side" aria-label="Project details">
+            {Object.keys(p.tech).length > 0 && (
             <div className="card">
               <h3>Stack</h3>
               <dl>
@@ -145,6 +150,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 ))}
               </dl>
             </div>
+            )}
             <div className="card cta-card" style={{ display: "block" }}>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", textTransform: "none", letterSpacing: "-0.01em", color: "var(--text)" }}>
                 Want something like this?

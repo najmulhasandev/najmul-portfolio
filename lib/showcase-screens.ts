@@ -19,4 +19,5 @@ export const wallScreens: Screen[] = [
   { src: "/showcase/wall-09.webp", alt: "Screenshot of the WhiskerDairy website" },
   { src: "/showcase/wall-10.webp", alt: "Screenshot of the Hero.io website" },
   { src: "/showcase/wall-07.webp", alt: "Screenshot of the LiveCollab website" },
+  { src: "/showcase/wall-11.webp", alt: "Screenshot of the BikriOS website" },
 ];
