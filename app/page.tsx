@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CopyEmail from "@/components/CopyEmail";
@@ -9,13 +10,15 @@ import {
 } from "@/lib/content";
 import { PROJECTS, isLive } from "@/lib/projects";
 import { ScreenWall } from "@/components/device-showcase";
-import { wallFocal, wallScreens } from "@/lib/showcase-screens";
+import { wallScreens } from "@/lib/showcase-screens";
 import { homeGraph } from "@/lib/schema";
 import {
   BLOG, CERTIFICATE, EMAIL, GITHUB, LINKEDIN, MAILTO, MAIN_SITE, RESUME_PDF, UPWORK,
 } from "@/lib/site";
 
 const ICONS = { phone: Phone, browser: Browser, server: Server, bot: Bot, wrench: Wrench } as const;
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const fmt = (d: string) =>
   new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -179,7 +182,6 @@ export default function Home() {
         eyebrow="Shipped work"
         title="From first idea to a product people use."
         screens={wallScreens}
-        focal={wallFocal}
       />
 
       {/* REVIEWS */}

@@ -77,7 +77,7 @@ export function DeviceFan({ screens }: { screens: [Screen, Screen, Screen] }) {
 }
 
 /**
- * Tilted 3D wall of up to 10 screens plus one straight focal screen.
+ * Tilted 3D wall of up to 12 screens, plus an optional straight focal screen.
  * variant "browser" (default) frames website screenshots; "phone" frames app screens.
  */
 export function ScreenWall({
@@ -90,12 +90,12 @@ export function ScreenWall({
   eyebrow?: string;
   title: ReactNode;
   screens: Screen[];
-  focal: Screen;
+  focal?: Screen;
   variant?: Variant;
 }) {
   const phone = variant === "phone";
   const colCount = phone ? 5 : 4;
-  const items = screens.slice(0, 10); // hard cap: keeps mobile data low
+  const items = screens.slice(0, 12); // hard cap: keeps mobile data low
   const cols = Array.from({ length: colCount }, (_, c) =>
     items.filter((_, i) => i % colCount === c),
   );
@@ -125,11 +125,13 @@ export function ScreenWall({
           </div>
         </div>
 
-        <div className={styles.focal}>
-          <div className={styles.focalInner}>
-            <Tile screen={focal} sizes={focalSizes} />
+        {focal ? (
+          <div className={styles.focal}>
+            <div className={styles.focalInner}>
+              <Tile screen={focal} sizes={focalSizes} />
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     </section>
   );
