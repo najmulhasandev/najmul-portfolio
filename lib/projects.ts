@@ -455,6 +455,32 @@ export const PROJECTS: Project[] = [
     "imgH": 547
   },
   {
+    "slug": "bikrios",
+    "name": "BikriOS",
+    "category": "Full-stack",
+    "status": null,
+    "tagline": "A commerce operating system for sellers in Bangladesh, built by Navicore.",
+    "overview": "BikriOS is a commerce operating system by Navicore for online and social-commerce businesses in Bangladesh. It brings the product catalog, stock, orders, customers, point of sale, an online storefront, growth tools and reports into one platform.",
+    "features": [
+      "Product catalog",
+      "Stock and inventory management",
+      "Order management",
+      "Customer management",
+      "Online storefront for a seller's own store",
+      "Point of sale (POS) for in-person sales",
+      "Growth and marketing tools",
+      "Reports and operations"
+    ],
+    "challenges": [],
+    "solutions": [],
+    "tech": {},
+    "stack": [],
+    "live": "https://bikrios.com",
+    "code": null,
+    "image": "bikrios",
+    "imgH": 640
+  },
+  {
     "slug": "clubsphere",
     "name": "ClubSphere",
     "category": "Full-stack",
