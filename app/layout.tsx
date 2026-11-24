@@ -4,8 +4,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Fx from "@/components/Fx";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { DESCRIPTION, SITE_NAME, SITE_URL, TITLE } from "@/lib/site";
+import { DESCRIPTION, ROLE, SITE_NAME, SITE_URL, TITLE } from "@/lib/site";
 import "./globals.css";
+
+const OG_IMAGE = "/og/hire-najmulhasan.jpg?v=2";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,8 +40,10 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
+    // 1200x630 baseline JPEG under 300 KB (WhatsApp limit). Bump ?v= whenever the file changes.
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, type: "image/jpeg", alt: `${SITE_NAME}, ${ROLE}` }],
   },
-  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [OG_IMAGE] },
 };
 
 export const viewport: Viewport = {

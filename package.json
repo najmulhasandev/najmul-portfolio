@@ -4,7 +4,10 @@
   "private": true,
   "description": "Portfolio of Najmul Hasan, a full-stack and React Native developer for freelance and part-time work. Live at hire.najmulhasan.dev.",
   "license": "UNLICENSED",
-  "repository": { "type": "git", "url": "git+https://github.com/najmulhasandev/najmul-portfolio.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najmulhasandev/najmul-portfolio.git"
+  },
   "homepage": "https://hire.najmulhasan.dev",
   "scripts": {
     "dev": "next dev",
@@ -18,7 +21,7 @@
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "next": "^16.4.2",
+    "next": "^16.4.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
